@@ -14,6 +14,8 @@ public class HomePage {
     private By abTestingLink = By.linkText("A/B Testing");
     private By addRemoveElementsLink = By.linkText("Add/Remove Elements");
     private By forgotPasswordLink = By.linkText("Forgot Password");
+    private By hoversLink = By.linkText("Hovers");
+    private By keysLink = By.linkText("Key Presses");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -32,6 +34,16 @@ public class HomePage {
     public ForgotPasswordPage clickForgotPassword(){
         clickLink(forgotPasswordLink);
         return new ForgotPasswordPage(driver);
+    }
+
+    public HoversPage clickHovers(){
+        clickLink(hoversLink);
+        return new HoversPage(driver);
+    }
+
+    public KeyPressesPage clickKeyPresses(){
+        clickLink(keysLink);
+        return new KeyPressesPage(driver);
     }
 
     public String getPageTitle(){
