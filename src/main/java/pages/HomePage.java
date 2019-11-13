@@ -16,6 +16,7 @@ public class HomePage {
     private By forgotPasswordLink = By.linkText("Forgot Password");
     private By hoversLink = By.linkText("Hovers");
     private By keysLink = By.linkText("Key Presses");
+    private By horizontalSliderLink = By.linkText("Horizontal Slider");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -44,6 +45,11 @@ public class HomePage {
     public KeyPressesPage clickKeyPresses(){
         clickLink(keysLink);
         return new KeyPressesPage(driver);
+    }
+
+    public HorizontalSliderPage clickHorizontalSlider(){
+        clickLink(horizontalSliderLink);
+        return new HorizontalSliderPage(driver);
     }
 
     public String getPageTitle(){
