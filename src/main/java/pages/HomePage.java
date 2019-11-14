@@ -17,6 +17,7 @@ public class HomePage {
     private By hoversLink = By.linkText("Hovers");
     private By keysLink = By.linkText("Key Presses");
     private By horizontalSliderLink = By.linkText("Horizontal Slider");
+    private By javaScriptAlertsLink = By.linkText("JavaScript Alerts");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -50,6 +51,11 @@ public class HomePage {
     public HorizontalSliderPage clickHorizontalSlider(){
         clickLink(horizontalSliderLink);
         return new HorizontalSliderPage(driver);
+    }
+
+    public AlertsPage clickJavaScriptAlerts(){
+        clickLink(javaScriptAlertsLink);
+        return new AlertsPage(driver);
     }
 
     public String getPageTitle(){
