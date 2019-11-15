@@ -18,6 +18,7 @@ public class HomePage {
     private By keysLink = By.linkText("Key Presses");
     private By horizontalSliderLink = By.linkText("Horizontal Slider");
     private By javaScriptAlertsLink = By.linkText("JavaScript Alerts");
+    private By fileUploadLink = By.linkText("File Upload");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -56,6 +57,11 @@ public class HomePage {
     public AlertsPage clickJavaScriptAlerts(){
         clickLink(javaScriptAlertsLink);
         return new AlertsPage(driver);
+    }
+
+    public FileUploaderPage clickFileUpload(){
+        clickLink(fileUploadLink);
+        return new FileUploaderPage(driver);
     }
 
     public String getPageTitle(){
