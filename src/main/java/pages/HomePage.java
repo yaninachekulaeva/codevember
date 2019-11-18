@@ -19,6 +19,7 @@ public class HomePage {
     private By horizontalSliderLink = By.linkText("Horizontal Slider");
     private By javaScriptAlertsLink = By.linkText("JavaScript Alerts");
     private By fileUploadLink = By.linkText("File Upload");
+    private By entryAdLink = By.linkText("Entry Ad");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -62,6 +63,11 @@ public class HomePage {
     public FileUploaderPage clickFileUpload(){
         clickLink(fileUploadLink);
         return new FileUploaderPage(driver);
+    }
+
+    public EntryAdPage clickEntryAd(){
+        clickLink(entryAdLink);
+        return new EntryAdPage(driver);
     }
 
     public String getPageTitle(){
