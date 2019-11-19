@@ -20,7 +20,7 @@ public class HomePage {
     private By javaScriptAlertsLink = By.linkText("JavaScript Alerts");
     private By fileUploadLink = By.linkText("File Upload");
     private By entryAdLink = By.linkText("Entry Ad");
-
+    private By contextMenuLink = By.linkText("Context Menu");
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -68,6 +68,11 @@ public class HomePage {
     public EntryAdPage clickEntryAd(){
         clickLink(entryAdLink);
         return new EntryAdPage(driver);
+    }
+
+    public ContextMenuPage clickContextMenu(){
+        clickLink(contextMenuLink);
+        return new ContextMenuPage(driver);
     }
 
     public String getPageTitle(){
