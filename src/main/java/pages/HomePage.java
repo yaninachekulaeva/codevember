@@ -22,6 +22,7 @@ public class HomePage {
     private By entryAdLink = By.linkText("Entry Ad");
     private By contextMenuLink = By.linkText("Context Menu");
     private By editorWYSIWYGLink = By.linkText("WYSIWYG Editor");
+    private By nestedFramesLink = By.linkText("Nested Frames");
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -79,6 +80,11 @@ public class HomePage {
     public WYSIWYGEditorPage clickWYSIWYGEditor(){
         clickLink(editorWYSIWYGLink);
         return new WYSIWYGEditorPage(driver);
+    }
+
+    public NestedFramesPage clickNestedFrames(){
+        clickLink(nestedFramesLink);
+        return new NestedFramesPage(driver);
     }
 
     public String getPageTitle(){
