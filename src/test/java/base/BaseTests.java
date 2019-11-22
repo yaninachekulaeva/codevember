@@ -7,6 +7,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import pages.HomePage;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author ychekulaeva
  */
@@ -25,6 +27,7 @@ public class BaseTests {
     public void setUp(){
         System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("https://the-internet.herokuapp.com/");
         driver.manage().window().maximize();
         homePage = new HomePage(driver);

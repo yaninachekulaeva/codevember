@@ -23,6 +23,9 @@ public class HomePage {
     private By contextMenuLink = By.linkText("Context Menu");
     private By editorWYSIWYGLink = By.linkText("WYSIWYG Editor");
     private By nestedFramesLink = By.linkText("Nested Frames");
+    private By dynamicLoadingLink= By.linkText("Dynamic Loading");
+
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -85,6 +88,11 @@ public class HomePage {
     public NestedFramesPage clickNestedFrames(){
         clickLink(nestedFramesLink);
         return new NestedFramesPage(driver);
+    }
+
+    public DynamicLoadingPage clickDynamicLoading(){
+        clickLink(dynamicLoadingLink);
+        return new DynamicLoadingPage(driver);
     }
 
     public String getPageTitle(){
