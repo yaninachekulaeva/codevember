@@ -24,7 +24,7 @@ public class HomePage {
     private By editorWYSIWYGLink = By.linkText("WYSIWYG Editor");
     private By nestedFramesLink = By.linkText("Nested Frames");
     private By dynamicLoadingLink= By.linkText("Dynamic Loading");
-
+    private By largeAndDeepDOMLink= By.linkText("Large & Deep DOM");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -93,6 +93,11 @@ public class HomePage {
     public DynamicLoadingPage clickDynamicLoading(){
         clickLink(dynamicLoadingLink);
         return new DynamicLoadingPage(driver);
+    }
+
+    public LargeAndDeepDOMPage clickLargeAndDeepDOM(){
+        clickLink(largeAndDeepDOMLink);
+        return new LargeAndDeepDOMPage(driver);
     }
 
     public String getPageTitle(){
