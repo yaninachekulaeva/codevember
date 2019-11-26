@@ -25,6 +25,8 @@ public class HomePage {
     private By nestedFramesLink = By.linkText("Nested Frames");
     private By dynamicLoadingLink= By.linkText("Dynamic Loading");
     private By largeAndDeepDOMLink= By.linkText("Large & Deep DOM");
+    private By infiniteScrollLink= By.linkText("Infinite Scroll");
+
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -98,6 +100,11 @@ public class HomePage {
     public LargeAndDeepDOMPage clickLargeAndDeepDOM(){
         clickLink(largeAndDeepDOMLink);
         return new LargeAndDeepDOMPage(driver);
+    }
+
+    public InfiniteScrollPage clickInfiniteScroll(){
+        clickLink(infiniteScrollLink);
+        return new InfiniteScrollPage(driver);
     }
 
     public String getPageTitle(){
