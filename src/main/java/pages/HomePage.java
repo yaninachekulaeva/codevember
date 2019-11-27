@@ -26,6 +26,7 @@ public class HomePage {
     private By dynamicLoadingLink= By.linkText("Dynamic Loading");
     private By largeAndDeepDOMLink= By.linkText("Large & Deep DOM");
     private By infiniteScrollLink= By.linkText("Infinite Scroll");
+    private By dropdownLink= By.linkText("Dropdown");
 
 
     public HomePage(WebDriver driver) {
@@ -105,6 +106,11 @@ public class HomePage {
     public InfiniteScrollPage clickInfiniteScroll(){
         clickLink(infiniteScrollLink);
         return new InfiniteScrollPage(driver);
+    }
+
+    public DropdownPage clickDropdown(){
+        clickLink(dropdownLink);
+        return new DropdownPage(driver);
     }
 
     public String getPageTitle(){
