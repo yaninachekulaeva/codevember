@@ -27,7 +27,7 @@ public class HomePage {
     private By largeAndDeepDOMLink= By.linkText("Large & Deep DOM");
     private By infiniteScrollLink= By.linkText("Infinite Scroll");
     private By dropdownLink= By.linkText("Dropdown");
-
+    private By multipleWindowsLink= By.linkText("Multiple Windows");
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -111,6 +111,11 @@ public class HomePage {
     public DropdownPage clickDropdown(){
         clickLink(dropdownLink);
         return new DropdownPage(driver);
+    }
+
+    public MultipleWindowsPage clickMultipleWindows(){
+        clickLink(multipleWindowsLink);
+        return new MultipleWindowsPage(driver);
     }
 
     public String getPageTitle(){
